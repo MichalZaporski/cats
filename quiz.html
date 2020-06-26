@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="pl">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-Ua-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="author" content="Michał Zaporski">
+    <title>Quiz</title>
+    <link rel="stylesheet" href="style.css">
+    <script>
+      function answers() {
+        let sum = 0;
+        if(Number(document.querySelector('input[name="1"]:checked').value)){
+          sum++;
+          document.getElementById('ans1').innerHTML="Prawidłowa odpowiedź: "+sum+"/1";
+        }
+        else
+          document.getElementById('ans1').innerHTML="Błędna odpowiedź: "+sum+"/1<br>Prawidłowa odpowiedź to: Kanada";
+
+        if(Number(document.querySelector('input[name="2"]:checked').value)){
+          sum++;
+          document.getElementById('ans2').innerHTML="Prawidłowa odpowiedź: "+sum+"/2";
+        }
+        else
+          document.getElementById('ans2').innerHTML="Błędna odpowiedź: "+sum+"/2<br>Prawidłowa odpowiedź to: kot egzotyczny";
+
+        if(Number(document.querySelector('input[name="3"]:checked').value)){
+          sum++;
+          document.getElementById('ans3').innerHTML="Prawidłowa odpowiedź: "+sum+"/3";
+        }
+        else
+          document.getElementById('ans3').innerHTML="Błędna odpowiedź: "+sum+"/3<br>Prawidłowa odpowiedź to: 18";
+      }
+    </script>
+  </head>
+  <body>
+    <header>
+      <label for="toggle">&#9776;</label>
+      <input type="checkbox" id="toggle">
+      <nav>
+          <a href="index.php">Strona główna</a>
+          <a href="give.php">Oddaj w opiekę</a>
+          <a href="take.php">Zaopiekuj się</a>
+          <a href="quiz.html" class="current_page">Quiz o kotach</a>
+      </nav>
+    </header>
+    <div id="push"></div>
+    <main>
+      <div id="form_div">
+        <p id="quiz_des">Quiz o kotach</p>
+        <p class="center">
+          1) Z którego państwa pochodzą słynne bezwłose koty - sfinksy?<br><br>
+          <input type="radio" name="1" value="0" checked> Meksyk
+          <input type="radio" name="1" value="0"> Egipt
+          <input type="radio" name="1" value="0"> Indie
+          <input type="radio" name="1" value="1"> Kanada<br>
+          <span id="ans1"></span><br><br>
+          2) Jakiej rasy jest kot Garfield?<br><br>
+          <input type="radio" name="2" value="0" checked> kot syjamski
+          <input type="radio" name="2" value="0"> maine coon
+          <input type="radio" name="2" value="1"> kot egzotyczny
+          <input type="radio" name="2" value="0"> kot perski<br>
+          <span id="ans2"></span><br><br>
+          3) Ile palców mają koty ?<br><br>
+          <input type="radio" name="3" value="0" checked> 20
+          <input type="radio" name="3" value="1"> 18
+          <input type="radio" name="3" value="0"> 16
+          <input type="radio" name="3" value="0"> 22<br>
+          <span id="ans3"></span><br><br>
+          <button type="button" name="button" id="quiz_end" onclick="answers()">Sprawdź</button>
+        </p>
+      </div>
+    </main>
+    <footer>
+        <p>&copy; Wszelkie prawa zastrzeżone</p>
+    </footer>
+  </body>
+</html>
